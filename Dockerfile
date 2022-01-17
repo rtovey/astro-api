@@ -6,9 +6,10 @@ WORKDIR /src
 COPY ./go.mod ./go.sum ./
 RUN go mod download
 COPY ./ ./
+RUN ls -alh
 
-RUN go test -timeout 30s -v ./...
-RUN go build -o /astro-api .
+RUN CGO_ENABLED=0 go test -timeout 30s -v ./...
+RUN CGO_ENABLED=0 go build -o /astro-api .
 
 FROM gcr.io/distroless/base AS final
 
