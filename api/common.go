@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	c "github.com/rtovey/astro/common"
+	c "github.com/rtovey/astro-lib/common"
 )
 
 func observer(req *http.Request) (c.Observer, error) {

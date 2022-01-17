@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rtovey/astro/lunar"
+	"github.com/rtovey/astro-lib/lunar"
 )
 
 func LunarPhase(w http.ResponseWriter, req *http.Request) {

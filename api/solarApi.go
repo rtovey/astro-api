@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rtovey/astro/solar"
+	"github.com/rtovey/astro-lib/solar"
 )
 
 func SunRiseSet(w http.ResponseWriter, req *http.Request) {
