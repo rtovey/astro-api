@@ -10,6 +10,8 @@ import (
 )
 
 func LunarPhase(w http.ResponseWriter, req *http.Request) {
+	logRequest("lunar phase")
+
 	date := time.Now()
 	phase := lunar.Phase(date)
 
@@ -18,6 +20,8 @@ func LunarPhase(w http.ResponseWriter, req *http.Request) {
 }
 
 func LunarRiseSet(w http.ResponseWriter, req *http.Request) {
+	logRequest("lunar rise/set time")
+
 	date := time.Now()
 	observer, err := observer(req)
 	if err != nil {
