@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/sun/rise-set", api.SunRiseSet)
-	http.HandleFunc("/moon/phase", api.LunarPhase)
-	http.HandleFunc("/moon/rise-set", api.LunarRiseSet)
+	http.HandleFunc("/api/sun/rise-set", api.SunRiseSet)
+	http.HandleFunc("/api/moon/phase", api.LunarPhase)
+	http.HandleFunc("/api/moon/rise-set", api.LunarRiseSet)
 
 	http.ListenAndServe(":8090", nil)
 }
