@@ -22,6 +22,8 @@ func SunRiseSet(w http.ResponseWriter, req *http.Request) {
 
 	sunRiseSetTime := solar.RiseSetTime(observer, date)
 
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(sunRiseSetTime)
 }

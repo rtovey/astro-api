@@ -15,6 +15,8 @@ func LunarPhase(w http.ResponseWriter, req *http.Request) {
 	date := time.Now()
 	phase := lunar.Phase(date)
 
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(phase)
 }
@@ -32,6 +34,8 @@ func LunarRiseSet(w http.ResponseWriter, req *http.Request) {
 
 	lunarRiseSetTime := lunar.RiseSetTime(observer, date)
 
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(lunarRiseSetTime)
 }
